@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Oct 29 12:44:15 2020
 
-@author: Vishal
-"""
 
 import pandas as pd
 
@@ -15,18 +11,19 @@ df.drop(['Unnamed: 0'],axis =1,inplace=True)
 name = df["Star_name"].to_list()
 mass = df["Mass"].to_list()
 radius = df["Radius"].to_list()
-dist = df["Distance"].to_list()
-gravity = df["Gravity"].to_list()
+#convert  df["Distance"] to list and assign to variable dist
+#convert  df["Gravity"] to list and assign to variable gravity
 
 
-final_star_list = []
+
+# initialize final_star_list  as empty []
 
 temp_dict ={}
 for i in range(0,len(name)):
     temp_dict["name"]=name[i]
     temp_dict["mass"]=mass[i]
-    temp_dict["radius"]=radius[i]
-    temp_dict["distance"]=dist[i]
+    # use temp_dict["radius"] to assign radius[i]
+    # use temp_dict["distance"] to assign dist[i]
     temp_dict["gravity"]= gravity[i]
     final_star_list.append(temp_dict)
     temp_dict ={}
