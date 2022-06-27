@@ -1,11 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Oct 29 13:53:38 2020
 
-@author: Vishal
-"""
-
-from flask import Flask, jsonify, request
+# import the libraries Flask, jsonify, request
 from data import data
 
 app = Flask(__name__)
@@ -17,14 +11,11 @@ def index():
         "message": "success"
     }), 200
 
-@app.route("/star")
+# write the app.route as "/star"
 def star():
     name = request.args.get("name")
     star_data = next(item for item in data if item["name"] == name)
-    return jsonify({
-        "data": star_data,
-        "message": "success"
-    }), 200
+    # return the data after jsonify
 
 if __name__ == "__main__":
     app.run()
